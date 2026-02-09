@@ -1,14 +1,25 @@
 # PyTorch Research Template
 
-A lightweight, research-oriented PyTorch template for training and evaluating neural networks with an emphasis on:
-- clarity
-- reproducibility
-- clean structure
-- minimal dependencies
+This repository provides a lightweight, research-oriented PyTorch template
+for training and evaluating neural networks with an emphasis on clarity,
+reproducibility, and extensibility.
 
-This is intentionally **not** a production framework. It’s a readable baseline you can adapt for research experiments.
+The code structure reflects how I typically prototype and run machine learning
+experiments in research settings. It is intentionally minimal and designed to
+be easy to read, modify, and extend.
 
-## Repo Structure
+This repository is meant as a **code sample / template**, not as a production
+framework or a source of novel research results.
+
+## Features
+- Deterministic training via centralized seeding
+- Clean training and evaluation loops
+- Modular model and utility structure
+- Simple checkpointing and logging
+- YAML-based experiment configuration
+- Explicit runtime measurement
+
+## Repository Structure
 
 pytorch-research-template/
 ├── README.md
@@ -16,28 +27,28 @@ pytorch-research-template/
 ├── train.py
 ├── eval.py
 ├── models/
-│ └── mlp.py
+│   └── mlp.py
 ├── data/
-│ └── dummy_dataset.py
+│   └── dummy_dataset.py
 ├── utils/
-│ ├── seed.py
-│ ├── metrics.py
-│ ├── logger.py
-│ └── checkpoint.py
+│   ├── seed.py
+│   ├── metrics.py
+│   ├── logger.py
+│   └── checkpoint.py
 └── configs/
-└── default.yaml
+    └── default.yaml
 
 
-## Features
-- Deterministic training via centralized seeding
-- Clean train/eval loops
-- Simple YAML config
-- Minimal logging + timing
-- Checkpoint save/load
+- `train.py` / `eval.py`: minimal training and evaluation entry points  
+- `models/`: example model definitions  
+- `data/`: small synthetic dataset for demonstration purposes  
+- `utils/`: reusable utilities (seeding, logging, metrics, checkpoints)  
+- `configs/`: YAML configuration files for experiments  
 
-## Quickstart
+## Usage
 
 ```bash
 pip install -r requirements.txt
 python train.py
 python eval.py
+
